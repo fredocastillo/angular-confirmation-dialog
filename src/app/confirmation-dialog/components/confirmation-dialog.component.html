@@ -1,0 +1,13 @@
+<h1 mat-dialog-title>{{ data.title }}</h1>
+<div mat-dialog-content>
+    <p>{{ data.message }}</p>
+</div>
+<div mat-dialog-actions [align]="data.align ? data.align : 'end'">
+    <button mat-raised-button color="{{ data.confirmBtn.color }}" [ngClass]="[data.confirmBtn.class ? data.confirmBtn.class : '']" (click)="confirm()">{{ data.confirmBtn.text }}</button>
+    <ng-container *ngIf="data.cancelBtn">
+        <button mat-raised-button color="{{ data.cancelBtn.color }}" [ngClass]="[data.cancelBtn.class ? data.cancelBtn.class : '']" (click)="cancel()">{{ data.cancelBtn.text }}</button>
+    </ng-container>
+    <ng-container *ngIf="data.otherBtn">
+        <button mat-raised-button color="{{ data.otherBtn.color }}" [ngClass]="[data.otherBtn.class ? data.otherBtn.class : '']" (click)="other()">{{ data.otherBtn.text }}</button>
+    </ng-container>
+</div>
